@@ -1,0 +1,36 @@
+Bank Account OOP Project
+
+Create a Python file bank_accounts.py, that has classes for several different types of bank accounts.
+    Create a BankAccount class that receives initialAmount and accName in __init__.
+    Print a message using the account name and balance in a nicely formatted way.
+    Add the method ‘getBalance’ that prints the balance of an account.
+    Add the method ‘deposit’ that adds the deposit amount to the balance and print the updated account balance. Use the getBalance method to print the balance.
+    Add the method ‘withdraw’.
+        First, check the balance to check enough funds to complete the transaction. Create a separate method to check viable transactions.
+        Perform withdrawal.
+    Add the method ‘transfer’.
+        First, check the balance to check enough funds to complete the transaction.
+        Perform transfer.
+
+
+Create another py file (oop_project.py) that imports everything from the bank_accounts file.
+Create an instance of BankAccount.
+Create a second BankAccount.
+Get balance for both accounts.
+Deposit 500 in the second account.
+Withdraw 1000 from the first account.
+Transfer 500 from the first account to the second account.
+Create a new class InterestRewardsAcct in bank_accounts.py that inherits from the BankAccount class. 
+Override deposit method because any deposit in this account gets added 5% in amount. Set the balance by adding 5% to the amount.
+
+In oop_project.py.
+Create an instance of InterestRewardsAcct.
+Deposit 100 to that instance.
+Transfer 100 to the above first account.
+Create a new class SavingsAcct in bank_accounts.py that inherits from the InterestRewardsAcct class. 
+Add a new property ‘fee’.
+Set fee = 5
+Override the withdraw method to deduct the fee. First, check for viable transactions.
+In oop_project.py.
+Create an instance of SavingsAcct.
+Transfer 100 to the above second account.
