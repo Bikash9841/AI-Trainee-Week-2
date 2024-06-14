@@ -1,5 +1,5 @@
 # Problem Set 4B -----------------> Cipher Like Caesar
-# Name: <your name here>
+# Name: <Rituram Ojha>
 # Collaborators:
 # Time Spent: x:xx
 
@@ -85,7 +85,6 @@ class Message(object):
 
         Returns: self.message_text
         '''
-        # pass  # delete this line and replace with your code here
         return self.message_text
 
     def get_valid_words(self):
@@ -95,7 +94,6 @@ class Message(object):
 
         Returns: a COPY of self.valid_words
         '''
-        # pass  # delete this line and replace with your code here
         valid_words_cpy = self.valid_words
         return valid_words_cpy
 
@@ -191,7 +189,6 @@ class PlaintextMessage(Message):
 
         Returns: a COPY of self.encryption_dict
         '''
-        # pass  # delete this line and replace with your code here
         return self.encryption_dict
 
     def get_message_text_encrypted(self):
@@ -200,7 +197,6 @@ class PlaintextMessage(Message):
 
         Returns: self.message_text_encrypted
         '''
-        # pass  # delete this line and replace with your code here
         return self.message_text_encrypted
 
     def change_shift(self, shift):
@@ -214,7 +210,6 @@ class PlaintextMessage(Message):
 
         Returns: nothing
         '''
-        # pass  # delete this line and replace with your code here
         self.shift = shift
         self.encryption_dict = self.build_shift_dict(self.shift)
         self.message_text_encrypted = self.apply_shift(self.shift)
@@ -231,7 +226,6 @@ class CiphertextMessage(Message):
             self.message_text (string, determined by input text)
             self.valid_words (list, determined using helper function load_words)
         '''
-        # pass  # delete this line and replace with your code here
         super().__init__(text)
 
     def decrypt_message(self):
@@ -250,9 +244,13 @@ class CiphertextMessage(Message):
         Returns: a tuple of the best shift value used to decrypt the message
         and the decrypted message text using that shift value
         '''
-        # pass  # delete this line and replace with your code here
+        # stores the decrypted messages on performing all possible shifts
         dec_msg = []
+
+        # count of real word for each sentence
         count_real_word = 0
+
+        # stores the no. of real words in each of the decrypted messages
         count_list = [0]*26
 
         for shift in range(26):
@@ -265,6 +263,7 @@ class CiphertextMessage(Message):
                     count_real_word += 1
             count_list[index] = count_real_word
 
+        # get the index of count_list that has maximum real words
         max_val = max(count_list)
         for i in range(len(count_list)):
             if count_list[i] == max_val:
@@ -289,5 +288,3 @@ if __name__ == '__main__':
     story = get_story_string()
     ciphertext = CiphertextMessage(story)
     print('Actual Output:', ciphertext.decrypt_message())
-
-    # pass  # delete this line and replace with your code here
