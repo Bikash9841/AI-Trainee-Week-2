@@ -1,7 +1,7 @@
 # Problem Set 4C ----------------------> Substitution Cipher
 # Name: <Rituram Ojha>
 # Collaborators:
-Time Spent: x:xx
+# Time Spent: x:xx
 
 import string
 from ps4a import get_permutations
